@@ -1,0 +1,83 @@
+/* src/main/webapp/css/style.css */
+:root {
+    --primary-color: #0077b6;
+    --secondary-color: #0096c7;
+    --accent-color: #48cae4;
+    --dark-bg: #1e293b;
+    --light-bg: #f8fafc;
+    --text-dark: #334155;
+    --text-light: #f1f5f9;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --sidebar-width: 260px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--light-bg); color: var(--text-dark); }
+
+/* ==== LOGIN PAGE ==== */
+.login-body { display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); }
+.login-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); width: 100%; max-width: 400px; text-align: center; }
+.login-card h2 { color: var(--primary-color); margin-bottom: 20px; }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; color: var(--text-dark); font-weight: 600; }
+.form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; transition: border 0.3s; }
+.form-group input:focus, .form-group select:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 5px rgba(0, 119, 182, 0.3); }
+.btn { background: var(--primary-color); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 1rem; width: 100%; transition: background 0.3s; font-weight: bold; }
+.btn:hover { background: var(--secondary-color); }
+
+/* ==== DASHBOARD LAYOUT ==== */
+.dashboard-container { display: flex; min-height: 100vh; }
+
+/* SIDEBAR */
+.sidebar { width: var(--sidebar-width); background: var(--dark-bg); color: var(--text-light); display: flex; flex-direction: column; }
+.sidebar-header { padding: 25px 20px; background: rgba(0,0,0,0.2); font-size: 1.5rem; font-weight: bold; text-align: center; border-bottom: 1px solid #334155; }
+.sidebar-menu { list-style: none; flex: 1; margin-top: 20px; }
+.sidebar-menu li a { display: block; padding: 15px 25px; color: #cbd5e1; text-decoration: none; font-size: 1.1rem; transition: background 0.2s; border-left: 4px solid transparent; }
+.sidebar-menu li a:hover, .sidebar-menu li a.active { background: #334155; color: white; border-left-color: var(--accent-color); }
+.sidebar-footer { padding: 20px; border-top: 1px solid #334155; }
+
+/* MAIN CONTENT */
+.main-content { flex: 1; display: flex; flex-direction: column; background: var(--light-bg); }
+.top-header { background: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+/* Update to stack vertically instead of side-by-side */
+.content-wrapper { 
+    padding: 30px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+}
+
+/* CARDS & TABLES */
+.card { 
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    padding: 25px; 
+    width: 100%; 
+}
+.card h3 { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--light-bg); color: var(--primary-color); }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+table th, table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+table td {
+    white-space: nowrap; /* Prevents text from wrapping too much */
+}
+table th { background: var(--light-bg); font-weight: 600; color: var(--text-dark); }
+table tr:hover { background: #f8fafc; }
+.badge { padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+.badge.confirmed { background: #dcfce7; color: var(--success); }
+
+/* ALERTS */
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 6px; text-align: left; font-size: 0.95rem; }
+.alert.error { background: #fee2e2; color: var(--danger); border-left: 5px solid var(--danger); }
+.alert.success { background: #dcfce7; color: var(--success); border-left: 5px solid var(--success); }
+
+/* UTILS */
+.price-display { font-size: 1.2rem; font-weight: bold; color: var(--success); background: #f0fdf4; padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center; border: 1px dashed var(--success); }
+
+/* Styling for disabled dropdown options */
+select option:disabled {
+    color: #94a3b8; /* Light grey */
+    background-color: #f1f5f9;
+}
